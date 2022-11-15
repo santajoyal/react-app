@@ -16,7 +16,7 @@ function Login() {
       try {
         const user = await axios.post(`${config.api}/user/login`, values);
         localStorage.setItem("myreact",user.data.token)
-        if (user.data.message === "Success") {
+        if (user.data.message === "sucess") {
           navigate("/product");
         }
       } catch (error) {
