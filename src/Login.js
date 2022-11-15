@@ -16,11 +16,10 @@ function Login() {
       try {
         const user = await axios.post(`${config.api}/user/login`, values);
         localStorage.setItem("myreact",user.data.token)
-        if (user.data.message === "success") {
+        if (user.data.message === "Success") {
           navigate("/product");
         }
       } catch (error) {
-        console.log(error);
         alert(error.response.data.message);
       }
     },
